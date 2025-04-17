@@ -33,7 +33,7 @@ export const SIZE = {
   widthPixel,
   heightPixel,
   fontPixel,
-  borderRadius: widthPixel(12),
+  borderRadius: widthPixel(16),
 };
 
 export const hitSlop = (number: number) => ({

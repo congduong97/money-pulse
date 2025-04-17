@@ -17,5 +17,7 @@ export const Colors = {
     backgroundLight: "#F5F5F5",
     transparent: "transparent",
     border: "#687076",
+    green:"green",
+    red:'red'
   },
 };
