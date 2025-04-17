@@ -1,74 +1,89 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Colors } from "@/constants/color";
+import { SIZE } from "@/constants/helper";
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        {/* Balance Card */}
+        <View style={styles.balanceCard}>
+          <Text style={styles.balanceLabel}>Total Balance</Text>
+          <Text style={styles.balanceAmount}>$12,345.67</Text>
+          <View style={styles.balanceChange}>
+            <Text style={styles.balanceChangeText}>+$1,234 this month</Text>
+          </View>
+        </View>
+
+        {/* Quick Actions */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Quick Actions</Text>
+          <View style={styles.quickActions}>
+            {/* Add your quick action buttons here */}
+          </View>
+        </View>
+
+        {/* Recent Transactions */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Recent Transactions</Text>
+          {/* Add your transaction list here */}
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  container: {
+    flex: 1,
+    backgroundColor: Colors.dark.white,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  scrollView: {
+    flex: 1,
+    padding: SIZE.widthPixel(16),
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  balanceCard: {
+    backgroundColor: Colors.dark.primary,
+    borderRadius: SIZE.borderRadius,
+    padding: SIZE.widthPixel(20),
+    marginBottom: SIZE.heightPixel(24),
+  },
+  balanceLabel: {
+    fontSize: SIZE.fontPixel(14),
+    color: Colors.dark.white,
+    opacity: 0.8,
+    marginBottom: SIZE.heightPixel(8),
+  },
+  balanceAmount: {
+    fontSize: SIZE.fontPixel(32),
+    fontWeight: "bold",
+    color: Colors.dark.white,
+    marginBottom: SIZE.heightPixel(16),
+  },
+  balanceChange: {
+    backgroundColor: "rgba(255, 255, 255, 0.2)",
+    paddingHorizontal: SIZE.widthPixel(12),
+    paddingVertical: SIZE.heightPixel(6),
+    borderRadius: SIZE.borderRadius,
+    alignSelf: "flex-start",
+  },
+  balanceChangeText: {
+    fontSize: SIZE.fontPixel(14),
+    color: Colors.dark.white,
+  },
+  section: {
+    marginBottom: SIZE.heightPixel(24),
+  },
+  sectionTitle: {
+    fontSize: SIZE.fontPixel(18),
+    fontWeight: "600",
+    color: Colors.dark.text,
+    marginBottom: SIZE.heightPixel(16),
+  },
+  quickActions: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: SIZE.heightPixel(16),
   },
 });
