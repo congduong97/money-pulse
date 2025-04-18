@@ -1,6 +1,6 @@
 import { Tabs } from "expo-router";
-import { Colors } from "@/constants/color";
-import { SIZE } from "@/constants/helper";
+import { Colors } from "@/utils/color";
+import { Size } from "@/utils/helper";
 import { Ionicons } from "@expo/vector-icons";
 
 export default function TabLayout() {
@@ -11,7 +11,7 @@ export default function TabLayout() {
         tabBarInactiveTintColor: Colors.dark.textSubtle,
         tabBarStyle: {
           backgroundColor: Colors.dark.white,
-          height: SIZE.heightPixel(64),
+          height: Size.heightPixel(64),
           elevation:9,
         },
         headerStyle: {
@@ -19,7 +19,7 @@ export default function TabLayout() {
         },
         headerTintColor: Colors.dark.text,
         headerTitleStyle: {
-          fontSize: SIZE.fontPixel(18),
+          fontSize: Size.fontPixel(18),
           fontWeight: "600",
         },
       }}

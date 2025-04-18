@@ -1,6 +1,6 @@
 import { StyleSheet, View, ViewProps } from "react-native";
-import { Colors } from "@/constants/color";
-import { SIZE } from "@/constants/helper";
+import { Colors } from "@/utils/color";
+import { Size } from "@/utils/helper";
 
 interface SpaceProps extends ViewProps {
   width?: number;
@@ -14,8 +14,8 @@ const Space = ({ width, height, opacity, ...rest }: SpaceProps) => {
       style={[
         styles.container,
         {
-          width: SIZE.widthPixel(width || 0),
-          height: SIZE.heightPixel(height || 0),
+          width: Size.widthPixel(width || 0),
+          height: Size.heightPixel(height || 0),
           opacity,
         },
       ]}

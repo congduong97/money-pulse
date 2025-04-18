@@ -1,4 +1,5 @@
 import { Dimensions, PixelRatio, Platform } from "react-native";
+import * as ImagePicker from "expo-image-picker";
 
 export const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } =
   Dimensions.get("window");
@@ -29,7 +30,7 @@ const fontPixel = (size: number) => {
   return heightPixel(size);
 };
 
-export const SIZE = {
+export const Size = {
   widthPixel,
   heightPixel,
   fontPixel,
@@ -37,11 +38,44 @@ export const SIZE = {
 };
 
 export const hitSlop = (number: number) => ({
-  top: SIZE.widthPixel(number),
-  left: SIZE.widthPixel(number),
-  right: SIZE.widthPixel(number),
-  bottom: SIZE.widthPixel(number),
+  top: Size.widthPixel(number),
+  left: Size.widthPixel(number),
+  right: Size.widthPixel(number),
+  bottom: Size.widthPixel(number),
 });
 
 export const isIos = Platform.OS === "ios";
 export const isAndroid = Platform.OS === "android";
+
+export const takePhoto = async (
+  params: ImagePicker.ImagePickerOptions = {}
+) => {
+  try {
+    const permission = await ImagePicker.requestCameraPermissionsAsync();
+    
+    if (!permission.granted) return null;
+    const result = await ImagePicker.launchCameraAsync(params);
+
+    if (!result.canceled) {
+      return result.assets[0];
+    }
+  } catch (err) {
+    return null;
+  }
+};
+
+export const pickFromGallery = async (
+  params: ImagePicker.ImagePickerOptions = {}
+) => {
+  try {
+     const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (!permission.granted) return null;
+    const result = await ImagePicker.launchImageLibraryAsync(params);
+
+    if (!result.canceled) {
+      return result.assets[0];
+    }
+  } catch (err) {
+    return null;
+  }
+};

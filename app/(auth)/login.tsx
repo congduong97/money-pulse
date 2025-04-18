@@ -12,8 +12,8 @@ import {
 } from "react-native";
 import { router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { Colors } from "@/constants/color";
-import { SIZE } from "@/constants/helper";
+import { Colors } from "@/utils/color";
+import { Size } from "@/utils/helper";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function LoginScreen() {
@@ -92,61 +92,61 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.dark.white,
-    padding: SIZE.widthPixel(16),
+    padding: Size.widthPixel(16),
   },
   header: {
-    marginTop: SIZE.heightPixel(16),
-    marginBottom: SIZE.widthPixel(40),
+    marginTop: Size.heightPixel(16),
+    marginBottom: Size.widthPixel(40),
   },
   title: {
-    fontSize: SIZE.fontPixel(32),
+    fontSize: Size.fontPixel(32),
     fontWeight: "bold",
     color: Colors.dark.text,
-    marginBottom: SIZE.widthPixel(8),
+    marginBottom: Size.widthPixel(8),
   },
   subtitle: {
-    fontSize: SIZE.fontPixel(16),
+    fontSize: Size.fontPixel(16),
     color: Colors.dark.textSubtle,
   },
   form: {
     flex: 1,
   },
   label: {
-    fontSize: SIZE.fontPixel(14),
+    fontSize: Size.fontPixel(14),
     fontWeight: "600",
     color: Colors.dark.text,
-    marginBottom: SIZE.widthPixel(8),
+    marginBottom: Size.widthPixel(8),
   },
   phoneInputContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: SIZE.widthPixel(24),
+    marginBottom: Size.widthPixel(24),
   },
   countryCode: {
-    paddingVertical: SIZE.heightPixel(16),
-    paddingHorizontal: SIZE.widthPixel(12),
+    paddingVertical: Size.heightPixel(16),
+    paddingHorizontal: Size.widthPixel(12),
     backgroundColor: Colors.dark.backgroundLight,
-    borderRadius: SIZE.borderRadius,
-    marginRight: SIZE.widthPixel(8),
+    borderRadius: Size.borderRadius,
+    marginRight: Size.widthPixel(8),
   },
   countryCodeText: {
-    fontSize: SIZE.fontPixel(16),
+    fontSize: Size.fontPixel(16),
     fontWeight: "600",
     color: Colors.dark.text,
   },
   input: {
     flex: 1,
-    height: SIZE.heightPixel(52),
+    height: Size.heightPixel(52),
     backgroundColor: Colors.dark.backgroundLight,
-    borderRadius: SIZE.borderRadius,
-    paddingHorizontal: SIZE.widthPixel(16),
-    fontSize: SIZE.fontPixel(16),
+    borderRadius: Size.borderRadius,
+    paddingHorizontal: Size.widthPixel(16),
+    fontSize: Size.fontPixel(16),
     color: Colors.dark.text,
   },
   button: {
-    height: SIZE.heightPixel(52),
+    height: Size.heightPixel(52),
     backgroundColor: Colors.dark.primary,
-    borderRadius: SIZE.borderRadius,
+    borderRadius: Size.borderRadius,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.dark.white,
-    fontSize: SIZE.fontPixel(16),
+    fontSize: Size.fontPixel(16),
     fontWeight: "600",
   },
 });

@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Colors } from "@/constants/color";
-import { SIZE } from "@/constants/helper";
+import { Colors } from "@/utils/color";
+import { Size } from "@/utils/helper";
 import { Ionicons } from "@expo/vector-icons";
 
 // Dummy data for transactions
@@ -96,11 +96,11 @@ const styles = StyleSheet.create({
   },
   summary: {
     flexDirection: "row",
-    padding: SIZE.widthPixel(16),
+    padding: Size.widthPixel(16),
     backgroundColor: Colors.dark.backgroundLight,
-    marginHorizontal: SIZE.widthPixel(16),
-    marginVertical: SIZE.heightPixel(16),
-    borderRadius: SIZE.borderRadius,
+    marginHorizontal: Size.widthPixel(16),
+    marginVertical: Size.heightPixel(16),
+    borderRadius: Size.borderRadius,
   },
   summaryItem: {
     flex: 1,
@@ -110,50 +110,50 @@ const styles = StyleSheet.create({
     width: 1,
     backgroundColor: Colors.dark.textSubtle,
     opacity: 0.2,
-    marginHorizontal: SIZE.widthPixel(16),
+    marginHorizontal: Size.widthPixel(16),
   },
   summaryLabel: {
-    fontSize: SIZE.fontPixel(14),
+    fontSize: Size.fontPixel(14),
     color: Colors.dark.textSubtle,
-    marginBottom: SIZE.heightPixel(4),
+    marginBottom: Size.heightPixel(4),
   },
   summaryAmount: {
-    fontSize: SIZE.fontPixel(18),
+    fontSize: Size.fontPixel(18),
     fontWeight: "600",
   },
   listContainer: {
-    padding: SIZE.widthPixel(16),
+    padding: Size.widthPixel(16),
   },
   transactionItem: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: SIZE.heightPixel(12),
+    paddingVertical: Size.heightPixel(12),
     borderBottomWidth: 1,
     borderBottomColor: Colors.dark.backgroundLight,
   },
   transactionIcon: {
-    width: SIZE.widthPixel(40),
-    height: SIZE.heightPixel(40),
-    borderRadius: SIZE.borderRadius,
+    width: Size.widthPixel(40),
+    height: Size.heightPixel(40),
+    borderRadius: Size.borderRadius,
     backgroundColor: Colors.dark.backgroundLight,
     alignItems: "center",
     justifyContent: "center",
-    marginRight: SIZE.widthPixel(12),
+    marginRight: Size.widthPixel(12),
   },
   transactionInfo: {
     flex: 1,
   },
   transactionTitle: {
-    fontSize: SIZE.fontPixel(16),
+    fontSize: Size.fontPixel(16),
     color: Colors.dark.text,
-    marginBottom: SIZE.heightPixel(4),
+    marginBottom: Size.heightPixel(4),
   },
   transactionDate: {
-    fontSize: SIZE.fontPixel(14),
+    fontSize: Size.fontPixel(14),
     color: Colors.dark.textSubtle,
   },
   transactionAmount: {
-    fontSize: SIZE.fontPixel(16),
+    fontSize: Size.fontPixel(16),
     fontWeight: "600",
   },
   incomeText: {

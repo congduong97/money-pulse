@@ -18,6 +18,7 @@ export const Colors = {
     transparent: "transparent",
     border: "#687076",
     green:"green",
-    red:'red'
+    red:'red',
+    secondary:'#4ADCF7'
   },
 };
